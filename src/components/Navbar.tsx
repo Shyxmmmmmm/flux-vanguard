@@ -61,7 +61,7 @@ export function Navbar() {
         >
           <Link to="/" className="flex items-center gap-2 group">
             <span className="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-[0_0_20px_rgba(99,102,241,0.5)]">
-              <Code2 className="w-5 h-5 text-white" />
+              <Code2 className="w-5 h-5 text-primary-foreground" />
             </span>
             <span className="font-display font-bold text-lg tracking-tight">
               <span className="text-gradient">BuildWith</span>.Shyam
@@ -101,7 +101,7 @@ export function Navbar() {
             </button>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)] hover:shadow-[0_8px_30px_-4px_rgba(99,102,241,0.8)] transition-shadow"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)] hover:shadow-[0_8px_30px_-4px_rgba(99,102,241,0.8)] transition-shadow"
             >
               Hire Me
             </Link>
@@ -143,8 +143,8 @@ export function Navbar() {
                         to={l.to}
                         className={`block px-4 py-3 rounded-xl text-sm font-medium ${
                           active
-                            ? "bg-gradient-to-r from-primary/25 to-secondary/25 text-white"
-                            : "text-subtext hover:text-white hover:bg-white/5"
+                            ? "bg-gradient-to-r from-primary/25 to-secondary/25 text-foreground"
+                            : "text-subtext hover:text-foreground hover:bg-muted/60"
                         }`}
                       >
                         {l.label}

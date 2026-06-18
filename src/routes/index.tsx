@@ -162,7 +162,7 @@ function Home() {
             <Link
               to="/projects"
 
-              className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-white shadow-[0_10px_40px_-10px_rgba(99,102,241,0.7)] hover:shadow-[0_15px_50px_-10px_rgba(99,102,241,0.9)] transition-all hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(99,102,241,0.7)] hover:shadow-[0_15px_50px_-10px_rgba(99,102,241,0.9)] transition-all hover:-translate-y-0.5"
             >
               View My Projects
 

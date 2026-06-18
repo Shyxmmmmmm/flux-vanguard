@@ -341,7 +341,7 @@ function Card({ p, onOpen }: { p: Project; onOpen: () => void }) {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-          <span className="text-xs font-bold tracking-[0.3em] text-white/60 mb-3">
+          <span className="text-xs font-bold tracking-[0.3em] text-foreground/60 mb-3">
 
             PROJECT
 
@@ -363,7 +363,7 @@ function Card({ p, onOpen }: { p: Project; onOpen: () => void }) {
         <p className="text-sm text-subtext line-clamp-2">{p.desc}</p>
         <div className="flex flex-wrap gap-1.5">
           {p.tech.slice(0, 4).map((t) => (
-            <span key={t} className="px-2 py-0.5 rounded-md bg-white/5 text-[10px] font-mono text-subtext">{t}</span>
+            <span key={t} className="px-2 py-0.5 rounded-md bg-muted/70 text-[10px] font-mono text-subtext">{t}</span>
           ))}
         </div>
         <div className="flex items-center gap-3 pt-2">
@@ -407,7 +407,7 @@ function Projects() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActive(null)}
-              className="fixed inset-0 z-[100] grid place-items-center p-4 bg-black/70 backdrop-blur-md"
+              className="fixed inset-0 z-100 grid place-items-center p-4 bg-foreground/65 backdrop-blur-md"
             >
               <motion.div
                 layoutId={`card-${active.id}`}
@@ -421,7 +421,7 @@ function Projects() {
 
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                    <span className="text-sm tracking-[0.3em] text-white/60 mb-4">
+                    <span className="text-sm tracking-[0.3em] text-foreground/60 mb-4">
 
                       PROJECT
 
@@ -437,7 +437,7 @@ function Projects() {
 
                   <button
                     onClick={() => setActive(null)}
-                    className="absolute top-4 right-4 grid place-items-center w-10 h-10 rounded-xl glass-strong hover:bg-white/10"
+                    className="absolute top-4 right-4 grid place-items-center w-10 h-10 rounded-xl glass-strong hover:bg-muted/80"
                   >
 
                     <X className="w-5 h-5" />

@@ -143,15 +143,15 @@
 }
 
 @utility glass {
-  background: var(--glass);
+  background: color-mix(in srgb, var(--glass) 88%, transparent);
   backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
 }
 
 @utility glass-strong {
-  background: color-mix(in srgb, var(--glass) 90%, transparent);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
   backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 86%, transparent);
 }
 
 @utility text-gradient {
@@ -162,7 +162,7 @@
 }
 
 @utility text-gradient-shine {
-  background: linear-gradient(110deg, #ffffff 30%, #6366f1 50%, #ffffff 70%);
+  background: linear-gradient(110deg, var(--foreground) 30%, #6366f1 50%, var(--foreground) 70%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -172,7 +172,7 @@
 
 @utility gradient-border {
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
+  background: color-mix(in srgb, var(--card) 94%, transparent);
   &::before {
     content: "";
     position: absolute;

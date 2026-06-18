@@ -133,7 +133,7 @@ function Contact() {
                     transition={{ duration: 4, repeat: Infinity, delay: idx * 0.4 }}
                     className="grid place-items-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-[0_0_20px_rgba(99,102,241,0.5)]"
                   >
-                    <i.Icon className="w-5 h-5 text-white" />
+                    <i.Icon className="w-5 h-5 text-primary-foreground" />
                   </motion.span>
                   <div>
                     <div className="text-xs text-subtext uppercase tracking-wider">{i.label}</div>
@@ -178,7 +178,7 @@ function Contact() {
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}
-              className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-white shadow-[0_10px_40px_-10px_rgba(99,102,241,0.7)] hover:shadow-[0_15px_50px_-10px_rgba(99,102,241,0.9)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-primary-foreground shadow-[0_10px_40px_-10px_rgba(99,102,241,0.7)] hover:shadow-[0_15px_50px_-10px_rgba(99,102,241,0.9)] transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <AnimatePresence mode="wait">
                 {status === "loading" ? (
@@ -227,7 +227,7 @@ function Field({
   label: string; value: string; onChange: (v: string) => void;
   type?: string; textarea?: boolean; required?: boolean;
 }) {
-  const common = "peer w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 pt-5 pb-2 text-sm outline-none focus:border-primary/60 focus:bg-white/[0.05] focus:shadow-[0_0_0_4px_rgba(99,102,241,0.15)] transition-all placeholder-transparent";
+  const common = "peer w-full bg-background/70 border border-border rounded-xl px-4 pt-5 pb-2 text-sm text-foreground outline-none focus:border-primary/60 focus:bg-background focus:shadow-[0_0_0_4px_rgba(99,102,241,0.15)] transition-all placeholder:text-transparent";
   return (
     <label className="relative block">
       {textarea ? (

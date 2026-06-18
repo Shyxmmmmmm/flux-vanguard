@@ -103,7 +103,7 @@ function About() {
               className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden gradient-border glass-strong"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40" />
-              <div className="absolute inset-0 grid place-items-center text-7xl font-bold text-white/90 font-display">
+              <div className="absolute inset-0 grid place-items-center text-7xl font-bold text-primary-foreground/90 font-display">
                 SK
               </div>
             </motion.div>
@@ -221,7 +221,7 @@ function About() {
                     </div>
                     <div className="hidden sm:block" />
                     <span className="absolute left-4 sm:left-1/2 -translate-x-1/2 grid place-items-center w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary shadow-[0_0_20px_rgba(99,102,241,0.6)]">
-                      <Icon className="w-4 h-4 text-white" />
+                      <Icon className="w-4 h-4 text-primary-foreground" />
                     </span>
                   </motion.div>
                 );

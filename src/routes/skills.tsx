@@ -191,7 +191,7 @@ function SkillBar({ skill, delay }: { skill: Skill; delay: number }) {
         </span>
         <span className="text-subtext font-mono text-xs">{skill.level}%</span>
       </div>
-      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+      <div className="h-1.5 rounded-full bg-muted overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
