@@ -7,9 +7,22 @@ import { PageTransition } from "../components/PageTransition";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Dev.Folio" },
-      { name: "description", content: "Selected works — interactive, performant, and beautiful." },
-      { property: "og:title", content: "Projects — Dev.Folio" },
+      {
+        title: "Shyam Kumar A S | Portfolio",
+      },
+
+      {
+        name: "description",
+
+        content:
+          "MERN Stack Developer, B.Tech ICT Graduate from SASTRA University and Incoming Associate Software Engineer at Accenture.",
+      },
+
+      {
+        property: "og:title",
+
+        content: "Shyam Kumar A S | Portfolio",
+      },
     ],
   }),
   component: Projects,
@@ -17,97 +30,298 @@ export const Route = createFileRoute("/projects")({
 
 type Project = {
   id: string;
+
   title: string;
+
+  badge: string;
+
   desc: string;
+
   long: string;
+
   tech: string[];
+
   features: string[];
+
   challenges: string;
+
   demo: string;
+
   repo: string;
+
   gradient: string;
-  emoji: string;
-};
+}
 
 const projects: Project[] = [
+
   {
-    id: "nebula",
-    title: "Nebula Analytics",
-    desc: "Real-time SaaS analytics dashboard with custom 3D data visualizations.",
-    long: "An enterprise-grade analytics platform handling 1M+ events/day with live dashboards.",
-    tech: ["React", "Three.js", "Node.js", "MongoDB", "WebSocket"],
-    features: ["Real-time WebSocket pipeline", "Custom 3D charts", "Multi-tenant auth", "Export to CSV/PDF"],
-    challenges: "Optimizing 60fps charts while streaming thousands of events per second.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "pizza-palace",
+
+    title: "Pizza Palace",
+
+    badge: "MERN",
+
+    desc: "Full-stack pizza ordering web application built using the MERN stack.",
+
+    long: "A responsive pizza ordering platform featuring authentication, menu management, cart functionality and order management.",
+
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Firebase"],
+
+    features: [
+
+      "User authentication",
+
+      "Dynamic pizza menu",
+
+      "Shopping cart",
+
+      "Order management"
+
+    ],
+
+    challenges: "Managing frontend-backend integration and deployment using Vercel and Render.",
+
+    demo: "https://pizza-palace-eight.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/Pizza_Palace.git",
+
     gradient: "from-primary to-secondary",
-    emoji: "📊",
+
   },
+
   {
-    id: "echo",
-    title: "Echo Social",
-    desc: "A minimalist social network with end-to-end encrypted messaging.",
-    long: "A privacy-first social app with stories, DMs, and zero ads — ever.",
-    tech: ["Next.js", "TypeScript", "Postgres", "WebRTC", "Tailwind"],
-    features: ["E2E encryption", "Stories", "WebRTC calls", "PWA support"],
-    challenges: "Implementing reliable E2E messaging with offline-first sync.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "student-web-interface",
+
+    title: "Student Web Interface",
+
+    badge: "MERN",
+
+    desc: "Student management portal for organizing student information.",
+
+    long: "A web application to manage student records with CRUD functionality and a clean responsive interface.",
+
+    tech: ["React", "Node.js", "Express.js", "MongoDB"],
+
+    features: [
+
+      "Add students",
+
+      "Update records",
+
+      "Delete records",
+
+      "Responsive UI"
+
+    ],
+
+    challenges: "Designing reusable components and integrating APIs.",
+
+    demo: "https://student-web-interface.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/Student-web-Interface.git",
+
     gradient: "from-secondary to-accent",
-    emoji: "💬",
+
   },
+
   {
-    id: "forge",
-    title: "Forge AI Studio",
-    desc: "AI-powered creative studio for generating, editing and remixing images.",
-    long: "A multi-model creative platform integrating diffusion and LLM APIs.",
-    tech: ["React", "Python", "FastAPI", "Redis", "AWS"],
-    features: ["Diffusion + ControlNet", "Prompt history", "Team workspaces", "API access"],
-    challenges: "Building a queue that scales from zero to hundreds of GPU workers.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "plant-leaf",
+
+    title: "Plant Leaf Disease Classification",
+
+    badge: "DL",
+
+    desc: "Deep learning project for identifying plant leaf diseases.",
+
+    long: "A CNN-based model trained to classify plant diseases from leaf images.",
+
+    tech: ["Python", "TensorFlow", "Deep Learning"],
+
+    features: [
+
+      "Image classification",
+
+      "Disease prediction",
+
+      "Model training",
+
+      "Performance evaluation"
+
+    ],
+
+    challenges: "Improving model accuracy and preprocessing image datasets.",
+
+    demo: "",
+
+    repo: "",
+
     gradient: "from-accent to-primary",
-    emoji: "🎨",
+
   },
+
   {
-    id: "atlas",
-    title: "Atlas Travel Planner",
-    desc: "Collaborative trip-planning app with maps, budgets and itineraries.",
-    long: "Plan trips with friends in real time. Drag-and-drop itineraries, shared budgets.",
-    tech: ["React", "Mapbox", "Express", "MongoDB", "Socket.io"],
-    features: ["Live collaboration", "Mapbox routing", "Budget splits", "Offline mode"],
-    challenges: "Conflict-free multi-user editing with last-write-wins per field.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "object-detection",
+
+    title: "Object Detection System",
+
+    badge: "DL",
+
+    desc: "Deep learning model for detecting objects from images and videos.",
+
+    long: "Implemented an object detection system capable of identifying multiple objects in real time.",
+
+    tech: ["Python", "OpenCV", "Deep Learning"],
+
+    features: [
+
+      "Object detection",
+
+      "Bounding boxes",
+
+      "Real-time prediction",
+
+      "Image processing"
+
+    ],
+
+    challenges: "Handling detection accuracy and optimizing model performance.",
+
+    demo: "",
+
+    repo: "",
+
     gradient: "from-primary to-accent",
-    emoji: "🗺️",
+
   },
+
   {
-    id: "pulse",
-    title: "Pulse Health",
-    desc: "Wearable-integrated wellness tracker with personalized insights.",
-    long: "Syncs with Apple Health & Google Fit. Generates weekly AI-driven reports.",
-    tech: ["React Native", "Node.js", "GraphQL", "Postgres"],
-    features: ["Wearable sync", "AI insights", "Goal tracking", "Push reminders"],
-    challenges: "Designing offline-first sync across iOS/Android wearable APIs.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "weather-app",
+
+    title: "Weather App",
+
+    badge: "React",
+
+    desc: "Weather forecasting application using external APIs.",
+
+    long: "Displays current weather information for searched locations.",
+
+    tech: ["React", "API"],
+
+    features: [
+
+      "Search city",
+
+      "Live weather",
+
+      "Responsive UI"
+
+    ],
+
+    challenges: "Handling API integration.",
+
+    demo: "https://weather-app-eight-mu-14.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/weather-app.git",
+
     gradient: "from-secondary to-primary",
-    emoji: "💗",
+
   },
+
   {
-    id: "quantum",
-    title: "Quantum Code Editor",
-    desc: "A browser-based collaborative IDE with live preview & AI pair-programmer.",
-    long: "Code, preview, and ship — all from the browser. With an AI co-pilot.",
-    tech: ["Monaco", "WebContainers", "React", "Express"],
-    features: ["Live preview", "AI completion", "Multi-cursor sync", "GitHub deploy"],
-    challenges: "Running real Node containers safely inside the browser sandbox.",
-    demo: "https://example.com",
-    repo: "https://github.com",
+    id: "stream-app",
+
+    title: "Netflix Stream App",
+
+    badge: "React",
+
+    desc: "Netflix-inspired movie streaming interface.",
+
+    long: "A responsive UI clone inspired by Netflix.",
+
+    tech: ["React", "CSS"],
+
+    features: [
+
+      "Movie cards",
+
+      "Responsive design"
+
+    ],
+
+    challenges: "Creating reusable UI components.",
+
+    demo: "https://stream-app-ruby.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/StreamApp.git",
+
     gradient: "from-accent to-secondary",
-    emoji: "💻",
+
   },
+
+  {
+    id: "greenden",
+
+    title: "Greenden",
+
+    badge: "Tailwind",
+
+    desc: "Plant e-commerce landing page.",
+
+    long: "Responsive website built using Tailwind CSS.",
+
+    tech: ["HTML", "Tailwind CSS"],
+
+    features: [
+
+      "Responsive UI",
+
+      "Product showcase"
+
+    ],
+
+    challenges: "Building responsive layouts.",
+
+    demo: "https://shyxmmmmmm.github.io/Greenden-tailwind/",
+
+    repo: "https://github.com/Shyxmmmmmm/Greenden-tailwind.git",
+
+    gradient: "from-primary to-secondary",
+
+  },
+
+  {
+    id: "student-favourite",
+
+    title: "Student Favourite List",
+
+    badge: "React",
+
+    desc: "Student favourite items management app.",
+
+    long: "Simple CRUD application to manage favourite lists.",
+
+    tech: ["React"],
+
+    features: [
+
+      "Add",
+
+      "Delete",
+
+      "Manage"
+
+    ],
+
+    challenges: "State management.",
+
+    demo: "https://student-favourite-list-three.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/student-favourite-list.git",
+
+    gradient: "from-accent to-primary",
+
+  },
+
 ];
 
 function Card({ p, onOpen }: { p: Project; onOpen: () => void }) {
@@ -120,11 +334,29 @@ function Card({ p, onOpen }: { p: Project; onOpen: () => void }) {
       onClick={onOpen}
       className="group relative cursor-pointer gradient-border rounded-3xl overflow-hidden glass-strong hover:shadow-[0_30px_80px_-20px_rgba(99,102,241,0.7)] transition-shadow"
     >
-      <motion.div layoutId={`image-${p.id}`} className={`relative aspect-[16/10] bg-gradient-to-br ${p.gradient} overflow-hidden`}>
-        <div className="absolute inset-0 grid place-items-center text-7xl transition-transform duration-700 group-hover:scale-110">
-          {p.emoji}
+      <motion.div
+        layoutId={`image-${p.id}`}
+        className={`relative aspect-[16/10] bg-gradient-to-br ${p.gradient}`}
+      >
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+
+          <span className="text-xs font-bold tracking-[0.3em] text-white/60 mb-3">
+
+            PROJECT
+
+          </span>
+
+          <h2 className="text-3xl font-bold text-center px-6">
+
+            {p.title}
+
+          </h2>
+
         </div>
+
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+
       </motion.div>
       <div className="p-6 space-y-3">
         <motion.h3 layoutId={`title-${p.id}`} className="text-xl font-bold">{p.title}</motion.h3>
@@ -182,11 +414,36 @@ function Projects() {
                 onClick={(e) => e.stopPropagation()}
                 className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto glass-strong gradient-border rounded-3xl"
               >
-                <motion.div layoutId={`image-${active.id}`} className={`relative aspect-[16/9] bg-gradient-to-br ${active.gradient}`}>
-                  <div className="absolute inset-0 grid place-items-center text-9xl">{active.emoji}</div>
-                  <button onClick={() => setActive(null)} className="absolute top-4 right-4 grid place-items-center w-10 h-10 rounded-xl glass-strong hover:bg-white/10">
+                <motion.div
+                  layoutId={`image-${active.id}`}
+                  className={`relative aspect-[16/9] bg-gradient-to-br ${active.gradient}`}
+                >
+
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+
+                    <span className="text-sm tracking-[0.3em] text-white/60 mb-4">
+
+                      PROJECT
+
+                    </span>
+
+                    <h1 className="text-5xl font-bold text-center px-10">
+
+                      {active.title}
+
+                    </h1>
+
+                  </div>
+
+                  <button
+                    onClick={() => setActive(null)}
+                    className="absolute top-4 right-4 grid place-items-center w-10 h-10 rounded-xl glass-strong hover:bg-white/10"
+                  >
+
                     <X className="w-5 h-5" />
+
                   </button>
+
                 </motion.div>
                 <div className="p-8 space-y-6">
                   <motion.h2 layoutId={`title-${active.id}`} className="text-3xl font-bold">{active.title}</motion.h2>

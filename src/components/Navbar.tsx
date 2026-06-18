@@ -1,14 +1,13 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Moon, Sun } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/skills", label: "Skills" },
   { to: "/projects", label: "Projects" },
-  { to: "/articles", label: "Articles" },
   { to: "/profiles", label: "Coding" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -16,15 +15,34 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const preferredTheme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const resolvedTheme = preferredTheme === "dark" ? "dark" : "light";
+
+    setTheme(resolvedTheme);
+    document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
+    document.documentElement.style.colorScheme = resolvedTheme;
+  }, []);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    document.documentElement.style.colorScheme = nextTheme;
+    window.localStorage.setItem("theme", nextTheme);
+  };
 
   return (
     <motion.header
@@ -46,7 +64,7 @@ export function Navbar() {
               <Code2 className="w-5 h-5 text-white" />
             </span>
             <span className="font-display font-bold text-lg tracking-tight">
-              <span className="text-gradient">Dev</span>.Folio
+              <span className="text-gradient">BuildWith</span>.Shyam
             </span>
           </Link>
 
@@ -72,20 +90,40 @@ export function Navbar() {
             })}
           </nav>
 
-          <Link
-            to="/contact"
-            className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)] hover:shadow-[0_8px_30px_-4px_rgba(99,102,241,0.8)] transition-shadow"
-          >
-            Hire Me
-          </Link>
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="grid place-items-center w-10 h-10 rounded-xl glass hover:border-primary/40 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)] hover:shadow-[0_8px_30px_-4px_rgba(99,102,241,0.8)] transition-shadow"
+            >
+              Hire Me
+            </Link>
+          </div>
 
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="lg:hidden grid place-items-center w-10 h-10 rounded-xl glass"
-            aria-label="Toggle menu"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="flex lg:hidden items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="grid place-items-center w-10 h-10 rounded-xl glass"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="grid place-items-center w-10 h-10 rounded-xl glass"
+              aria-label="Toggle menu"
+            >
+              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>

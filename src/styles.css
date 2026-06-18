@@ -46,12 +46,12 @@
 :root {
   --radius: 0.875rem;
 
-  --background: #09090b;
-  --foreground: #ffffff;
-  --card: rgba(255, 255, 255, 0.05);
-  --card-foreground: #ffffff;
-  --popover: #131316;
-  --popover-foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
 
   --primary: #6366f1;
   --primary-foreground: #ffffff;
@@ -60,17 +60,44 @@
   --accent: #06b6d4;
   --accent-foreground: #ffffff;
 
+  --muted: rgba(15, 23, 42, 0.06);
+  --muted-foreground: #475569;
+  --subtext: #64748b;
+  --glass: rgba(255, 255, 255, 0.68);
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(15, 23, 42, 0.08);
+  --input: rgba(15, 23, 42, 0.06);
+  --ring: #6366f1;
+
+  --bg-orb-1: rgba(99, 102, 241, 0.08);
+  --bg-orb-2: rgba(139, 92, 246, 0.07);
+  --bg-orb-3: rgba(6, 182, 212, 0.06);
+
+  color-scheme: light;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: #ffffff;
+  --popover: #131316;
+  --popover-foreground: #ffffff;
+
   --muted: rgba(255, 255, 255, 0.06);
   --muted-foreground: #a1a1aa;
   --subtext: #a1a1aa;
   --glass: rgba(255, 255, 255, 0.05);
 
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #6366f1;
+
+  --bg-orb-1: rgba(99, 102, 241, 0.15);
+  --bg-orb-2: rgba(139, 92, 246, 0.12);
+  --bg-orb-3: rgba(6, 182, 212, 0.08);
 
   color-scheme: dark;
 }
@@ -91,9 +118,9 @@
     overflow-x: hidden;
     min-height: 100vh;
     background-image:
-      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(99, 102, 241, 0.15), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 100%, rgba(139, 92, 246, 0.12), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 50% 50%, rgba(6, 182, 212, 0.08), transparent 60%);
+      radial-gradient(ellipse 80% 50% at 20% 0%, var(--bg-orb-1), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 100%, var(--bg-orb-2), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 50%, var(--bg-orb-3), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -103,12 +130,12 @@
   }
 
   ::selection {
-    background: rgba(99, 102, 241, 0.4);
-    color: #fff;
+    background: rgba(99, 102, 241, 0.24);
+    color: inherit;
   }
 
   ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: #09090b; }
+  ::-webkit-scrollbar-track { background: var(--background); }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, #6366f1, #8b5cf6);
     border-radius: 8px;
@@ -116,15 +143,15 @@
 }
 
 @utility glass {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--glass);
   backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
 }
 
 @utility glass-strong {
-  background: rgba(255, 255, 255, 0.07);
+  background: color-mix(in srgb, var(--glass) 90%, transparent);
   backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
 }
 
 @utility text-gradient {

@@ -6,21 +6,97 @@ import { PageTransition } from "../components/PageTransition";
 export const Route = createFileRoute("/profiles")({
   head: () => ({
     meta: [
-      { title: "Coding Profiles — Dev.Folio" },
-      { name: "description", content: "Track my coding journey across platforms." },
-      { property: "og:title", content: "Coding Profiles — Dev.Folio" },
+      {
+        title: "Shyam Kumar A S | Portfolio",
+      },
+
+      {
+        name: "description",
+
+        content:
+          "MERN Stack Developer, B.Tech ICT Graduate from SASTRA University and Incoming Associate Software Engineer at Accenture.",
+      },
+
+      {
+        property: "og:title",
+
+        content: "Shyam Kumar A S | Portfolio",
+      },
     ],
   }),
   component: Profiles,
 });
 
 const platforms = [
-  { name: "GitHub", user: "@alex-carter", url: "https://github.com", logo: "🐙", stat1: { l: "Repos", v: "84" }, stat2: { l: "Stars", v: "1.2k" }, color: "from-primary to-secondary" },
-  { name: "LeetCode", user: "alex_codes", url: "https://leetcode.com", logo: "🟧", stat1: { l: "Solved", v: "650+" }, stat2: { l: "Rating", v: "1840" }, color: "from-secondary to-accent" },
-  { name: "GeeksforGeeks", user: "alex_geek", url: "https://geeksforgeeks.org", logo: "🟩", stat1: { l: "Score", v: "9k" }, stat2: { l: "Rank", v: "Top 5%" }, color: "from-accent to-primary" },
-  { name: "HackerRank", user: "alex.dev", url: "https://hackerrank.com", logo: "🟢", stat1: { l: "Badges", v: "12" }, stat2: { l: "Stars", v: "5★" }, color: "from-primary to-accent" },
-  { name: "CodeChef", user: "alex_cc", url: "https://codechef.com", logo: "🟫", stat1: { l: "Rating", v: "1920" }, stat2: { l: "Stars", v: "4★" }, color: "from-secondary to-primary" },
-  { name: "Codeforces", user: "alex_cf", url: "https://codeforces.com", logo: "🔴", stat1: { l: "Rating", v: "1650" }, stat2: { l: "Rank", v: "Expert" }, color: "from-accent to-secondary" },
+
+  {
+    name: "GitHub",
+
+    user: "@Shyxmmmmmm",
+
+    url: "https://github.com/Shyxmmmmmm",
+
+    logo: "🐙",
+
+    stat1: { l: "Repos", v: "28" },
+
+    stat2: { l: "Contributions", v: "426+" },
+
+    color: "from-primary to-secondary",
+
+  },
+
+  {
+    name: "LeetCode",
+
+    user: "shyaammmmmm",
+
+    url: "https://leetcode.com/u/shyaammmmmm/",
+
+    logo: "🟧",
+
+    stat1: { l: "Solved", v: "50+" },
+
+    stat2: { l: "Level", v: "Beginner" },
+
+    color: "from-secondary to-accent",
+
+  },
+
+  {
+    name: "GeeksforGeeks",
+
+    user: "shyxmmmmmm",
+
+    url: "https://www.geeksforgeeks.org/profile/shyxmmmmmm",
+
+    logo: "🟩",
+
+    stat1: { l: "Solved", v: "70+" },
+
+    stat2: { l: "Focus", v: "DSA" },
+
+    color: "from-accent to-primary",
+
+  },
+
+  {
+    name: "LinkedIn",
+
+    user: "Shyam Kumar A S",
+
+    url: "https://www.linkedin.com/in/shyam-a-s-6460a3301/",
+
+    logo: "💼",
+
+    stat1: { l: "Role", v: "ASE" },
+
+    stat2: { l: "Company", v: "Accenture" },
+
+    color: "from-primary to-accent",
+
+  },
+
 ];
 
 function Profiles() {
@@ -32,7 +108,9 @@ function Profiles() {
             Coding <span className="text-gradient">Profiles</span>
           </h1>
           <p className="mt-4 text-subtext max-w-xl mx-auto">
-            Where I sharpen the saw — competitive programming and open source.
+
+            Platforms where I practice coding, solve problems, and showcase my development journey.
+
           </p>
         </motion.div>
 

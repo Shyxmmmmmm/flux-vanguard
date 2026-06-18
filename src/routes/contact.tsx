@@ -8,9 +8,22 @@ import { PageTransition } from "../components/PageTransition";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Dev.Folio" },
-      { name: "description", content: "Let's build something amazing together." },
-      { property: "og:title", content: "Contact — Dev.Folio" },
+      {
+        title: "Shyam Kumar A S | Portfolio",
+      },
+
+      {
+        name: "description",
+
+        content:
+          "MERN Stack Developer, B.Tech ICT Graduate from SASTRA University and Incoming Associate Software Engineer at Accenture.",
+      },
+
+      {
+        property: "og:title",
+
+        content: "Shyam Kumar A S | Portfolio",
+      },
     ],
   }),
   component: Contact,
@@ -21,9 +34,40 @@ const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefin
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
 
 const info = [
-  { Icon: Mail, label: "Email", value: "hello@alexcarter.dev", href: "mailto:hello@alexcarter.dev" },
-  { Icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-  { Icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
+
+{
+Icon:Mail,
+
+label:"Email",
+
+value:"shyamkumar2005464@gmail.com",
+
+href:"mailto:shyamkumar2005464@gmail.com",
+
+},
+
+{
+Icon:Phone,
+
+label:"Phone",
+
+value:"+91 63804 86476",
+
+href:"tel:+916380486476",
+
+},
+
+{
+Icon:MapPin,
+
+label:"Location",
+
+value:"Thiruvarur, Tamil Nadu, India",
+
+href:"#",
+
+},
+
 ];
 
 function Contact() {
@@ -65,7 +109,7 @@ function Contact() {
             Get in <span className="text-gradient">Touch</span>
           </h1>
           <p className="mt-4 text-subtext max-w-xl mx-auto">
-            Got a project, opportunity, or just want to say hi? My inbox is always open.
+            I'm always open to discussing new opportunities, projects, and meaningful connections.
           </p>
         </motion.div>
 
@@ -100,14 +144,14 @@ function Contact() {
             ))}
 
             <div className="gradient-border rounded-2xl p-6 glass-strong">
-              <h3 className="font-semibold mb-2">Response time</h3>
-              <p className="text-sm text-subtext">I typically respond within 24 hours on weekdays.</p>
+              <h3 className="font-semibold mb-2">Currently Open to Opportunities</h3>
+              <p className="text-sm text-subtext">Actively exploring software engineering opportunities, collaborations and new projects.</p>
               <div className="mt-4 flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                <span className="text-xs text-emerald-400">Available for work</span>
+                <span className="text-xs text-emerald-400">Open to connect</span>
               </div>
             </div>
           </div>
@@ -128,7 +172,7 @@ function Contact() {
               <Field label="Subject" value={form.subject} onChange={(v) => setForm({ ...form, subject: v })} required />
             </div>
             <div className="mt-4">
-              <Field label="Message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} required />
+              <Field label="Your Message" textarea value={form.message} onChange={(v) => setForm({ ...form, message: v })} required />
             </div>
 
             <button
@@ -161,7 +205,7 @@ function Contact() {
                   exit={{ opacity: 0 }}
                   className="mt-4 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-sm text-emerald-300"
                 >
-                  Thanks! I'll get back to you soon. ✨
+                  Message sent successfully. Thank you for reaching out! 🚀
                 </motion.div>
               )}
               {status === "error" && (

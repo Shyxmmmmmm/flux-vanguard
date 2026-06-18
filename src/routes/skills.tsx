@@ -6,9 +6,22 @@ import { PageTransition } from "../components/PageTransition";
 export const Route = createFileRoute("/skills")({
   head: () => ({
     meta: [
-      { title: "Skills — Dev.Folio" },
-      { name: "description", content: "Tech stack across frontend, backend, databases and tools." },
-      { property: "og:title", content: "Skills — Dev.Folio" },
+      {
+        title: "Shyam Kumar A S | Portfolio",
+      },
+
+      {
+        name: "description",
+
+        content:
+          "MERN Stack Developer, B.Tech ICT Graduate from SASTRA University and Incoming Associate Software Engineer at Accenture.",
+      },
+
+      {
+        property: "og:title",
+
+        content: "Shyam Kumar A S | Portfolio",
+      },
     ],
   }),
   component: Skills,
@@ -16,69 +29,123 @@ export const Route = createFileRoute("/skills")({
 
 type Skill = { name: string; level: number; emoji: string };
 
-const categories: { name: string; color: string; skills: Skill[] }[] = [
+const categories = [
+
   {
-    name: "Frontend",
-    color: "from-primary to-secondary",
-    skills: [
-      { name: "React", level: 95, emoji: "⚛️" },
-      { name: "Next.js", level: 90, emoji: "▲" },
-      { name: "TypeScript", level: 88, emoji: "🔷" },
-      { name: "Tailwind CSS", level: 92, emoji: "🎨" },
-      { name: "HTML5", level: 98, emoji: "🌐" },
-      { name: "CSS3", level: 95, emoji: "💅" },
-    ],
-  },
-  {
-    name: "Backend",
-    color: "from-secondary to-accent",
-    skills: [
-      { name: "Node.js", level: 90, emoji: "🟢" },
-      { name: "Express.js", level: 88, emoji: "🚂" },
-      { name: "REST APIs", level: 92, emoji: "🔌" },
-      { name: "GraphQL", level: 75, emoji: "🔺" },
-    ],
-  },
-  {
-    name: "Database",
-    color: "from-accent to-primary",
-    skills: [
-      { name: "MongoDB", level: 88, emoji: "🍃" },
-      { name: "PostgreSQL", level: 80, emoji: "🐘" },
-      { name: "Redis", level: 70, emoji: "🟥" },
-    ],
-  },
-  {
-    name: "Languages",
-    color: "from-primary to-accent",
-    skills: [
-      { name: "JavaScript", level: 96, emoji: "💛" },
-      { name: "TypeScript", level: 88, emoji: "🔷" },
-      { name: "Python", level: 75, emoji: "🐍" },
-      { name: "Java", level: 70, emoji: "☕" },
-    ],
-  },
-  {
-    name: "Tools",
-    color: "from-secondary to-primary",
-    skills: [
-      { name: "Git", level: 92, emoji: "🌿" },
-      { name: "GitHub", level: 95, emoji: "🐙" },
-      { name: "Postman", level: 88, emoji: "📮" },
-      { name: "VS Code", level: 98, emoji: "💻" },
-    ],
-  },
-  {
-    name: "Cloud & Deploy",
-    color: "from-accent to-secondary",
-    skills: [
-      { name: "Vercel", level: 92, emoji: "▲" },
-      { name: "Render", level: 85, emoji: "🎯" },
-      { name: "AWS", level: 70, emoji: "☁️" },
-      { name: "Docker", level: 72, emoji: "🐳" },
-    ],
-  },
-];
+name:"Tools",
+color:"from-secondary to-primary",
+
+skills:[
+
+{name:"Git",level:70,emoji:"🌿"},
+
+{name:"GitHub",level:90,emoji:"🐙"},
+
+{name:"VS Code",level:90,emoji:"💻"},
+
+{name:"Postman",level:80,emoji:"📮"},
+
+{name:"Eclipse",level:70,emoji:"🌘"},
+
+{name:"IntelliJ IDEA",level:70,emoji:"🧠"},
+
+{name:"Kaggle",level:65,emoji:"📊"}
+
+]
+
+},
+
+{
+name:"Frontend",
+color:"from-primary to-secondary",
+
+skills:[
+
+{name:"HTML5",level:90,emoji:"🌐"},
+
+{name:"CSS3",level:85,emoji:"🎨"},
+
+{name:"Tailwind CSS",level:90,emoji:"💨"},
+
+{name:"JavaScript",level:85,emoji:"💛"},
+
+{name:"React.js",level:85,emoji:"⚛️"},
+
+{name:"TypeScript",level:65,emoji:"🔷"},
+
+]
+
+},
+
+{
+name:"Backend",
+color:"from-secondary to-accent",
+
+skills:[
+
+{name:"Node.js",level:85,emoji:"🟢"},
+
+{name:"Express.js",level:85,emoji:"🚀"},
+
+{name:"REST API",level:80,emoji:"🔌"},
+
+]
+
+},
+
+{
+name:"Database",
+color:"from-accent to-primary",
+
+skills:[
+
+{name:"MongoDB",level:85,emoji:"🍃"},
+
+{name:"SQL",level:75,emoji:"🗄️"},
+
+]
+
+},
+
+{
+name:"Programming Languages",
+color:"from-primary to-accent",
+
+skills:[
+
+{name:"JavaScript",level:85,emoji:"💛"},
+
+{name:"Python",level:80,emoji:"🐍"},
+
+{name:"Java (Basic)",level:60,emoji:"☕"},
+
+]
+
+},
+
+{
+name:"Cloud & Deployment",
+color:"from-accent to-secondary",
+
+skills:[
+
+{name:"Render",level:80,emoji:"🎯"},
+
+{name:"Vercel",level:80,emoji:"▲"},
+
+{name:"MongoDB Atlas",level:85,emoji:"🍃"},
+
+{name:"AWS (Basic)",level:60,emoji:"☁️"},
+
+{name:"Firebase",level:70,emoji:"🔥"},
+
+]
+
+},
+
+
+
+]
 
 function TiltCard({ children, color }: { children: React.ReactNode; color: string }) {
   const mx = useMotionValue(0);

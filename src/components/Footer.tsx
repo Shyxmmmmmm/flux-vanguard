@@ -35,14 +35,11 @@ export function Footer() {
           </div>
 
           <p className="text-sm text-subtext max-w-xl">
-            Designed & Developed with{" "}
-            <span className="text-red-400 animate-pulse">❤</span> using{" "}
-            <span className="text-gradient font-semibold">React, Framer Motion, Three.js</span>{" "}
-            and <span className="text-gradient font-semibold">Particles.js</span>
+            Built by <span className="font-semibold text-gradient">Shyam Kumar</span> as a personal portfolio to showcase projects, skills, and achievements.
           </p>
 
           <p className="text-xs text-subtext/60">
-            © {new Date().getFullYear()} Dev.Folio — All rights reserved.
+            © {new Date().getFullYear()} — All rights reserved.
           </p>
         </div>
       </div>

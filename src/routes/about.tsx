@@ -6,26 +6,83 @@ import { PageTransition } from "../components/PageTransition";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Dev.Folio" },
-      { name: "description", content: "My journey, education, interests and milestones." },
-      { property: "og:title", content: "About — Dev.Folio" },
+      { title: "About — Shyam Kumar A S" },
+
+      {
+        name: "description",
+
+        content:
+          "Education, journey, achievements and interests of Shyam Kumar A S.",
+      },
+
+      {
+        property: "og:title",
+
+        content: "About — Shyam Kumar A S",
+      },
     ],
   }),
   component: About,
 });
 
 const stats = [
-  { v: "50+", l: "Projects Completed", Icon: Rocket },
-  { v: "20+", l: "Technologies Learned", Icon: BookOpen },
-  { v: "12", l: "Certificates Earned", Icon: Award },
-  { v: "3+", l: "Years of Learning", Icon: Calendar },
+  { v: "10+", l: "Projects Completed", Icon: Rocket },
+
+  { v: "10+", l: "Technologies Learned", Icon: BookOpen },
+
+  { v: "11", l: "Certificates Earned", Icon: Award },
+
+  { v: "100+", l: "Problems Solved", Icon: Calendar },
 ];
 
 const timeline = [
-  { year: "2024", title: "Senior Frontend Engineer", place: "Acme Labs", desc: "Leading design-system & 3D UI initiatives.", type: "work" },
-  { year: "2023", title: "Full-Stack Developer", place: "Pixel Forge", desc: "Built scalable MERN platforms serving 100k+ users.", type: "work" },
-  { year: "2022", title: "B.Tech — Computer Science", place: "Tech University", desc: "Graduated with honors. Specialized in distributed systems.", type: "edu" },
-  { year: "2020", title: "Started Coding Journey", place: "Self-taught", desc: "Fell in love with the craft. Never looked back.", type: "edu" },
+  {
+    year: "2020",
+
+    title: "Completed SSLC",
+
+    place: "Higher Secondary School",
+
+    desc: "Completed 10th standard with 92%.",
+
+    type: "edu",
+  },
+
+  {
+    year: "2022",
+
+    title: "Completed HSC",
+
+    place: "Higher Secondary School",
+
+    desc: "Completed 12th standard with 91.8%.",
+
+    type: "edu",
+  },
+
+  {
+    year: "2026",
+
+    title: "B.Tech ICT Graduate",
+
+    place: "SASTRA University",
+
+    desc: "Completed B.Tech Information and Communication Technology with a CGPA of 7.5 CGPA.",
+
+    type: "edu",
+  },
+
+  {
+    year: "2026",
+
+    title: "Placed at Accenture",
+
+    place: "Associate Software Engineer",
+
+    desc: "Joined Accenture as an Associate Software Engineer in July 2026.",
+
+    type: "work",
+  },
 ];
 
 function About() {
@@ -47,7 +104,7 @@ function About() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40" />
               <div className="absolute inset-0 grid place-items-center text-7xl font-bold text-white/90 font-display">
-                AC
+                SK
               </div>
             </motion.div>
             <div className="absolute -inset-6 -z-10 bg-gradient-to-br from-primary to-accent opacity-30 blur-3xl rounded-full" />
@@ -67,10 +124,7 @@ function About() {
               transition={{ delay: 0.2 }}
               className="text-subtext text-base sm:text-lg leading-relaxed"
             >
-              I'm a passionate developer obsessed with creating digital experiences that feel
-              alive. With deep expertise across the modern web — from React frontends to
-              Node.js backends — I bridge the gap between brilliant ideas and pixel-perfect
-              implementation.
+              I'm Shyam Kumar A S, a B.Tech Information and Communication Technology graduate from SASTRA University. My primary area of interest is MERN Stack development, and I also enjoy working with Python, SQL and Deep Learning. I have built projects in Object Detection and Plant Species Classification in Deep Learning, and I enjoy continuously exploring new technologies and building impactful solutions.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -78,11 +132,20 @@ function About() {
               transition={{ delay: 0.3 }}
               className="text-subtext text-base sm:text-lg leading-relaxed"
             >
-              When I'm not shipping code, you'll find me exploring generative art,
-              tinkering with hardware, or hiking somewhere with poor wifi.
+              When I'm not shipping code, you'll find me exploring generative art, tinkering with hardware, or hiking somewhere with poor wifi.
             </motion.p>
             <div className="flex flex-wrap gap-3 pt-2">
-              {["Curious", "Detail-obsessed", "Team player", "Lifelong learner"].map((t, i) => (
+              {[
+                "MERN Developer",
+
+                "Python Enthusiast",
+
+                "Problem Solver",
+
+                "Lifelong Learner",
+
+                "Deep Learning"
+              ].map((t, i) => (
                 <motion.span
                   key={t}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -174,9 +237,29 @@ function About() {
           </h2>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { t: "Generative Art", d: "Creating visuals with code and math.", e: "🎨" },
-              { t: "Mountain Hiking", d: "Reaching new perspectives, literally.", e: "🏔️" },
-              { t: "Open Source", d: "Contributing to projects that empower devs.", e: "💜" },
+              {
+                t: "Gym",
+
+                d: "Staying consistent and maintaining a healthy lifestyle.",
+
+                e: "💪",
+              },
+
+              {
+                t: "Music",
+
+                d: "Listening to music helps me relax and stay focused.",
+
+                e: "🎵",
+              },
+
+              {
+                t: "Learning Technologies",
+
+                d: "Exploring new tools, frameworks and software trends.",
+
+                e: "🚀",
+              },
             ].map((i, idx) => (
               <motion.div
                 key={i.t}
