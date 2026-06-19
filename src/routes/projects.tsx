@@ -151,9 +151,9 @@ const projects: Project[] = [
 
     challenges: "Improving model accuracy and preprocessing image datasets.",
 
-    demo: "",
+    demo: "https://github.com/Shyxmmmmmm/Leaf_classification.git",
 
-    repo: "",
+    repo: "https://github.com/Shyxmmmmmm/Leaf_classification.git",
 
     gradient: "from-accent to-primary",
 
@@ -186,9 +186,9 @@ const projects: Project[] = [
 
     challenges: "Handling detection accuracy and optimizing model performance.",
 
-    demo: "",
+    demo: "https://github.com/Shyxmmmmmm/Object_detection.git",
 
-    repo: "",
+    repo: "https://github.com/Shyxmmmmmm/Object_detection.git",
 
     gradient: "from-primary to-accent",
 
