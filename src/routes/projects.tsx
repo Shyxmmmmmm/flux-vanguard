@@ -89,40 +89,7 @@ const projects: Project[] = [
 
   },
 
-  {
-    id: "student-web-interface",
 
-    title: "Student Web Interface",
-
-    badge: "MERN",
-
-    desc: "Student management portal for organizing student information.",
-
-    long: "A web application to manage student records with CRUD functionality and a clean responsive interface.",
-
-    tech: ["React", "Node.js", "Express.js", "MongoDB"],
-
-    features: [
-
-      "Add students",
-
-      "Update records",
-
-      "Delete records",
-
-      "Responsive UI"
-
-    ],
-
-    challenges: "Designing reusable components and integrating APIs.",
-
-    demo: "https://student-web-interface.vercel.app/",
-
-    repo: "https://github.com/Shyxmmmmmm/Student-web-Interface.git",
-
-    gradient: "from-secondary to-accent",
-
-  },
 
   {
     id: "plant-leaf",
@@ -191,6 +158,78 @@ const projects: Project[] = [
     repo: "https://github.com/Shyxmmmmmm/Object_detection.git",
 
     gradient: "from-primary to-accent",
+
+  },
+  {
+    id: "bulk-mail-system",
+
+    title: "Bulk Mail System",
+
+    badge: "MERN",
+
+    desc: "Web application for sending bulk emails using Excel contact lists.",
+
+    long: "A full-stack MERN application that enables users to upload Excel files containing email addresses, compose custom messages, and send bulk emails efficiently using Nodemailer. The application also stores campaign details in MongoDB for tracking purposes.",
+
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Nodemailer",
+      "XLSX"
+    ],
+
+    features: [
+      "Upload Excel (.xlsx) files",
+      "Extract email addresses automatically",
+      "Send bulk emails",
+      "Custom email message",
+      "Store email campaign history",
+      "Responsive UI"
+    ],
+
+    challenges:
+      "Parsing Excel files, handling asynchronous email delivery, integrating Nodemailer with SMTP, and managing backend API communication.",
+
+    demo: "bulk-mail-b3sg.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/Bulk_mail.git",
+
+    gradient: "from-primary to-secondary",
+  },
+  {
+    id: "student-web-interface",
+
+    title: "Student Web Interface",
+
+    badge: "MERN",
+
+    desc: "Student management portal for organizing student information.",
+
+    long: "A web application to manage student records with CRUD functionality and a clean responsive interface.",
+
+    tech: ["React", "Node.js", "Express.js", "MongoDB"],
+
+    features: [
+
+      "Add students",
+
+      "Update records",
+
+      "Delete records",
+
+      "Responsive UI"
+
+    ],
+
+    challenges: "Designing reusable components and integrating APIs.",
+
+    demo: "https://student-web-interface.vercel.app/",
+
+    repo: "https://github.com/Shyxmmmmmm/Student-web-Interface.git",
+
+    gradient: "from-secondary to-accent",
 
   },
 
