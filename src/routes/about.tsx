@@ -98,17 +98,18 @@ function About() {
             className="relative mx-auto"
           >
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden gradient-border glass-strong"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40" />
-              <div className="absolute inset-0 grid place-items-center text-7xl font-bold text-primary-foreground/90 font-display">
-                SK
-              </div>
-            </motion.div>
-            <div className="absolute -inset-6 -z-10 bg-gradient-to-br from-primary to-accent opacity-30 blur-3xl rounded-full" />
-          </motion.div>
+  animate={{ y: [0, -12, 0] }}
+  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+  className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-3xl overflow-hidden gradient-border glass-strong"
+>
+  <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40" />
+  <img
+    src="/project-images/Profile_pic.jpeg"
+    alt="Shyam Kumar A S"
+    className="absolute inset-0 w-full h-full object-cover object-top"
+  />
+</motion.div>
+<div className="absolute -inset-6 -z-10 bg-gradient-to-br from-primary to-accent opacity-30 blur-3xl rounded-full" /></motion.div>
 
           <div className="space-y-6">
             <motion.h1
