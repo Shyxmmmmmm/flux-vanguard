@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:title",
 
-        content: "About — Shyam Kumar A S",
+        content: "Shyam Kumar A S | Portfolio",
       },
     ],
   }),
