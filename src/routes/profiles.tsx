@@ -55,7 +55,7 @@ const platforms = [
 
     logo: "🟧",
 
-    stat1: { l: "Solved", v: "50+" },
+    stat1: { l: "Solved", v: "150+" },
 
     stat2: { l: "Level", v: "Beginner" },
 
