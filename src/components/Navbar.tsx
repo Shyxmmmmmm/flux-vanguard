@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, Moon, Sun } from "lucide-react";
+import { Code2, Moon, Sun } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
@@ -115,13 +115,6 @@ export function Navbar() {
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
-            <button
-              onClick={() => setOpen((v) => !v)}
-              className="grid place-items-center w-10 h-10 rounded-xl glass"
-              aria-label="Toggle menu"
-            >
-              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

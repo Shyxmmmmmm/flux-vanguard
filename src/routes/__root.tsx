@@ -2,7 +2,7 @@ import { Outlet, createRootRouteWithContext, HeadContent, Scripts, useRouter } f
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AnimatePresence } from "framer-motion";
 import { useEffect, type ReactNode } from "react";
-
+import MobileBottomNav from "../components/MobileBottomNav";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/Navbar";
@@ -118,6 +118,8 @@ function RootComponent() {
         <Outlet />
       </AnimatePresence>
       <Footer />
+      <div className="h-24 lg:hidden" />
+      <MobileBottomNav />
     </QueryClientProvider>
   );
 }
