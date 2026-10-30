@@ -45,7 +45,7 @@ type Project = {
 
   challenges: string;
 
-  demo: string;
+  demo?: string;
 
   repo: string;
 
@@ -118,8 +118,6 @@ const projects: Project[] = [
 
     challenges: "Improving model accuracy and preprocessing image datasets.",
 
-    demo: "https://github.com/Shyxmmmmmm/Leaf_classification.git",
-
     repo: "https://github.com/Shyxmmmmmm/Leaf_classification.git",
 
     gradient: "from-accent to-primary",
@@ -152,8 +150,6 @@ const projects: Project[] = [
     ],
 
     challenges: "Handling detection accuracy and optimizing model performance.",
-
-    demo: "https://github.com/Shyxmmmmmm/Object_detection.git",
 
     repo: "https://github.com/Shyxmmmmmm/Object_detection.git",
 
@@ -192,7 +188,7 @@ const projects: Project[] = [
     challenges:
       "Parsing Excel files, handling asynchronous email delivery, integrating Nodemailer with SMTP, and managing backend API communication.",
 
-    demo: "bulk-mail-b3sg.vercel.app/",
+    demo: "https://bulk-mail-b3sg.vercel.app/",
 
     repo: "https://github.com/Shyxmmmmmm/Bulk_mail.git",
 
@@ -406,9 +402,11 @@ function Card({ p, onOpen }: { p: Project; onOpen: () => void }) {
           ))}
         </div>
         <div className="flex items-center gap-3 pt-2">
-          <a href={p.demo} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary to-secondary">
-            <ExternalLink className="w-3 h-3" /> Demo
-          </a>
+                    {p.demo && (
+            <a href={p.demo} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-gradient-to-r from-primary to-secondary">
+              <ExternalLink className="w-3 h-3" /> Demo
+            </a>
+          )}
           <a href={p.repo} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg glass hover:border-primary/40">
             <Github className="w-3 h-3" /> Code
           </a>
@@ -508,9 +506,11 @@ function Projects() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <a href={active.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-sm">
-                      <ExternalLink className="w-4 h-4" /> Live Demo
-                    </a>
+                                        {active.demo && (
+                      <a href={active.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary to-secondary font-semibold text-sm">
+                        <ExternalLink className="w-4 h-4" /> Live Demo
+                      </a>
+                    )}
                     <a href={active.repo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-strong font-semibold text-sm">
                       <Github className="w-4 h-4" /> View Code
                     </a>
