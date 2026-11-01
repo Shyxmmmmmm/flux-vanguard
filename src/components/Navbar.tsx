@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Moon, Sun } from "lucide-react";
@@ -17,6 +17,19 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const router = useRouter();
+  const isHome = pathname === "/";
+
+  // if someone opens a page directly (like /about), put Home underneath it
+  useEffect(() => {
+    const idx = (window.history.state as any)?.__TSR_index;
+    if (idx === 0 && window.location.pathname !== "/") {
+      const target = window.location.pathname + window.location.search + window.location.hash;
+      router.history.replace("/");
+      router.history.push(target);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -59,7 +72,7 @@ export function Navbar() {
             scrolled ? "shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)]" : ""
           }`}
         >
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" replace={!isHome} className="flex items-center gap-2 group">
             <span className="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary shadow-[0_0_20px_rgba(99,102,241,0.5)]">
               <Code2 className="w-5 h-5 text-primary-foreground" />
             </span>
@@ -75,6 +88,7 @@ export function Navbar() {
                 <Link
                   key={l.to}
                   to={l.to}
+                  replace={!isHome}
                   className="relative px-4 py-2 text-sm font-medium text-subtext hover:text-foreground transition-colors"
                 >
                   {active && (
@@ -101,6 +115,7 @@ export function Navbar() {
             </button>
             <Link
               to="/contact"
+              replace={!isHome}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)] hover:shadow-[0_8px_30px_-4px_rgba(99,102,241,0.8)] transition-shadow"
             >
               Hire Me
@@ -134,6 +149,7 @@ export function Navbar() {
                     <li key={l.to}>
                       <Link
                         to={l.to}
+                        replace={!isHome}
                         className={`block px-4 py-3 rounded-xl text-sm font-medium ${
                           active
                             ? "bg-gradient-to-r from-primary/25 to-secondary/25 text-foreground"
