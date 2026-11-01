@@ -15,6 +15,7 @@ const links = [
 
 export default function MobileBottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/";
 
   return (
     // md:hidden -> only on phones, your desktop navbar stays untouched
@@ -30,7 +31,7 @@ export default function MobileBottomNav() {
 
           return (
             <li key={to} className="flex-1">
-              <Link to={to} className="block">
+              <Link to={to} replace={!isHome} className="block">
                 <div className="relative flex flex-col items-center gap-0.5 py-2">
                   {isActive && (
                     <motion.span
